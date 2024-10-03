@@ -30,13 +30,23 @@ public class Recordatorio {
     @Override
     public String toString() {
         // Implementar
-        return "";
+        return this.mensaje + " @ "+ this.fecha+" "+ this.horario;
     }
 
     @Override
     public boolean equals(Object otro) {
         // Implementar
-        return true;
+        boolean otroEsNull = (otro == null);
+
+        if (otroEsNull || otro.getClass() != this.getClass() ){
+            return false;
+        }
+
+       //Casting 
+        Recordatorio otra = (Recordatorio) otro;
+        return (this.fecha.equals(otra.fecha))&&(this.mensaje == otra.mensaje)&&(this.horario.equals(otra.horario));
+        //FALTA QUE AGREGUEN TEST PARA ESTA FUNCION EQUALS, NO PUDO VERIFICAR SI ESTA BIEN, LUEGO NO ESTOY SEGURO SI ESTA
+        //BIEN USAR ESTE METODO.EQUALS O SI FUNCIONABA CON THIS.FECHA == OTRA.FECHA && ...
     }
 
 }
