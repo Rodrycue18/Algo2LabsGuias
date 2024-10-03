@@ -41,7 +41,7 @@ public class Fecha {
         if (otroEsNull || otra.getClass() != this.getClass() ){
             return false;
         }
-        
+       //Casting 
         Fecha otro = (Fecha) otra;
         return (this.mes == otro.mes)&&(this.dia == otro.dia);
         
